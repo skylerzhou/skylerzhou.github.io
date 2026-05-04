@@ -1,0 +1,13 @@
+# Cloud Collection data
+# Each entry has bilingual fields. To add a new cloud, append a new list item.
+# - image: filename inside assets/img/clouds/
+# - date:  date the photo was taken (YYYY-MM-DD)
+# - location_en / location_zh: where it was taken (English / 中文)
+# - caption_en / caption_zh: one-sentence description (English / 中文)
+
+- image: sample.jpg
+  date: 2025-01-01
+  location_en: Philadelphia, PA
+  location_zh: 美国费城
+  caption_en: A placeholder cloud — replace this entry once you upload your first photo.
+  caption_zh: 占位云 —— 上传第一张照片后请替换此条目。
