@@ -27,9 +27,23 @@ _styles: >
     color: var(--global-bg-color);
     border-color: var(--global-theme-color);
   }
-  .lang-zh { display: none !important; }
-  body.lang-zh .lang-en { display: none !important; }
-  body.lang-zh .lang-zh { display: revert !important; }
+  /* default state: hide English so the no-JS fallback shows Chinese */
+  .lang-en { display: none; }
+  /* in EN mode: hide Chinese, show English with explicit display per element type */
+  body.lang-en .lang-zh { display: none; }
+  body.lang-en span.lang-en,
+  body.lang-en a.lang-en { display: inline; }
+  body.lang-en p.lang-en,
+  body.lang-en div.lang-en,
+  body.lang-en h1.lang-en,
+  body.lang-en h2.lang-en,
+  body.lang-en h3.lang-en,
+  body.lang-en h4.lang-en,
+  body.lang-en h5.lang-en,
+  body.lang-en h6.lang-en,
+  body.lang-en section.lang-en,
+  body.lang-en article.lang-en,
+  body.lang-en li.lang-en { display: block; }
 
   /* ---------- preface ---------- */
   .cloud-preface {
@@ -161,8 +175,8 @@ _styles: >
 <!-- prettier-ignore-start -->
 
 <div class="cloud-lang-toggle" role="group" aria-label="language toggle">
-  <button type="button" id="cloud-lang-en" class="active" onclick="setCloudLang('en')">EN</button>
-  <button type="button" id="cloud-lang-zh" onclick="setCloudLang('zh')">中</button>
+  <button type="button" id="cloud-lang-en" onclick="setCloudLang('en')">EN</button>
+  <button type="button" id="cloud-lang-zh" class="active" onclick="setCloudLang('zh')">中</button>
 </div>
 
 <!-- ============== PREFACE ============== -->
@@ -256,18 +270,39 @@ _styles: >
 {% endfor %}
 
 <script>
-  function setCloudLang(lang) {
-    document.body.classList.toggle('lang-zh', lang === 'zh');
-    var enBtn = document.getElementById('cloud-lang-en');
-    var zhBtn = document.getElementById('cloud-lang-zh');
-    if (enBtn) enBtn.classList.toggle('active', lang === 'en');
-    if (zhBtn) zhBtn.classList.toggle('active', lang === 'zh');
-    try { localStorage.setItem('cloudLang', lang); } catch (e) {}
-  }
   (function () {
-    var saved = null;
-    try { saved = localStorage.getItem('cloudLang'); } catch (e) {}
-    if (saved === 'zh') setCloudLang('zh');
+    var BLOCK_TAGS = {
+      DIV: 1, P: 1, H1: 1, H2: 1, H3: 1, H4: 1, H5: 1, H6: 1,
+      SECTION: 1, ARTICLE: 1, LI: 1
+    };
+    function naturalDisplay(el) {
+      return BLOCK_TAGS[el.tagName] ? 'block' : 'inline';
+    }
+    window.setCloudLang = function (lang) {
+      // Toggle body class to match the active language (default = Chinese).
+      document.body.classList.toggle('lang-en', lang === 'en');
+      document.body.classList.toggle('lang-zh', lang === 'zh');
+      // JS safety net: explicitly set inline display on every i18n element
+      // so visibility never depends on tricky CSS keywords like `revert`.
+      document.querySelectorAll('.lang-en').forEach(function (el) {
+        el.style.display = (lang === 'en') ? naturalDisplay(el) : 'none';
+      });
+      document.querySelectorAll('.lang-zh').forEach(function (el) {
+        el.style.display = (lang === 'zh') ? naturalDisplay(el) : 'none';
+      });
+      var enBtn = document.getElementById('cloud-lang-en');
+      var zhBtn = document.getElementById('cloud-lang-zh');
+      if (enBtn) enBtn.classList.toggle('active', lang === 'en');
+      if (zhBtn) zhBtn.classList.toggle('active', lang === 'zh');
+      try { localStorage.setItem('cloudLang', lang); } catch (e) {}
+    };
+    // Default to Chinese; honor the user's last explicit choice if they've toggled.
+    var initial = 'zh';
+    try {
+      var saved = localStorage.getItem('cloudLang');
+      if (saved === 'zh' || saved === 'en') initial = saved;
+    } catch (e) {}
+    window.setCloudLang(initial);
   })();
 </script>
 
