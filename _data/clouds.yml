@@ -1,13 +1,129 @@
 # Cloud Collection data
-# Each entry has bilingual fields. To add a new cloud, append a new list item.
-# - image: filename inside assets/img/clouds/
-# - date:  date the photo was taken (YYYY-MM-DD)
-# - location_en / location_zh: where it was taken (English / 中文)
-# - caption_en / caption_zh: one-sentence description (English / 中文)
+# ----------------------
+# The page renders 13 sections in order. Each section contains a list of "clouds".
+# A cloud entry can include:
+#   image            – filename inside assets/img/clouds/
+#   title_zh / title_en
+#   location_zh / location_en
+#   time_zh / time_en
+#   rarity_zh / rarity_en       (稀有程度)
+#   description_zh / description_en
+#
+# To add a new cloud:
+#   1. Drop the photo in assets/img/clouds/ (use ASCII filenames like "cirrus-01.jpg").
+#   2. Append a new item under the appropriate section's `clouds:` list.
 
-- image: sample.jpg
-  date: 2025-01-01
-  location_en: Philadelphia, PA
-  location_zh: 美国费城
-  caption_en: A placeholder cloud — replace this entry once you upload your first photo.
-  caption_zh: 占位云 —— 上传第一张照片后请替换此条目。
+sections:
+  - id: cirrus
+    title_zh: 卷云
+    title_en: Cirrus
+    clouds: []
+
+  - id: cirrocumulus
+    title_zh: 卷积云
+    title_en: Cirrocumulus
+    clouds: []
+
+  - id: cirrostratus
+    title_zh: 卷层云
+    title_en: Cirrostratus
+    clouds: []
+
+  - id: altocumulus
+    title_zh: 高积云
+    title_en: Altocumulus
+    clouds: []
+
+  - id: altostratus
+    title_zh: 高层云
+    title_en: Altostratus
+    clouds: []
+
+  - id: nimbostratus
+    title_zh: 云层云
+    title_en: Nimbostratus
+    clouds: []
+
+  - id: stratocumulus
+    title_zh: 层积云
+    title_en: Stratocumulus
+    clouds: []
+
+  - id: stratus
+    title_zh: 层云
+    title_en: Stratus
+    clouds: []
+
+  - id: cumulus
+    title_zh: 积云
+    title_en: Cumulus
+    clouds: []
+
+  - id: cumulonimbus
+    title_zh: 积雨云
+    title_en: Cumulonimbus
+    clouds: []
+
+  - id: special
+    title_zh: 特殊云
+    title_en: Special clouds
+    clouds: []
+
+  - id: optical
+    title_zh: 光学现象
+    title_en: Optical phenomena
+    clouds: []
+
+  - id: dog
+    title_zh: 小狗云
+    title_en: Dog clouds
+    clouds:
+      - image: dog-jin.jpg
+        title_zh: 小今云
+        title_en: Little Jin
+        location_zh: 美国费城
+        location_en: Philadelphia, USA
+        time_zh: 2026年四月
+        time_en: April 2026
+        rarity_zh: 常见
+        rarity_en: Common
+        description_zh: >-
+          在春天的草地上发现的一块特殊的八个月的小狗云，形状似骑士比熊犬，
+          在费城大学城非常常见，会跟所有路上遇到的人类热情地打招呼。
+        description_en: >-
+          A special eight-month-old puppy cloud spotted on a spring lawn,
+          shaped like a Cavalier King Charles bichon. Very common around
+          University City Philadelphia and greets every human it meets
+          with great enthusiasm.
+
+      - image: dog-bei.jpg
+        title_zh: 小贝云
+        title_en: Little Bei
+        location_zh: 中国南昌
+        location_en: Nanchang, China
+        time_zh: 2026年三月
+        time_en: March 2026
+        rarity_zh: 较为少见
+        rarity_en: Somewhat rare
+        description_zh: >-
+          一块胖乎乎的五岁的比熊云，对陌生人类很害羞，需要耐心才能摸到。
+        description_en: >-
+          A round, five-year-old bichon-shaped cloud who is shy around
+          strangers — patience is required before you're allowed to pet her.
+
+      - image: dog-ali.jpg
+        title_zh: 阿力云
+        title_en: Ali
+        location_zh: 中国南昌
+        location_en: Nanchang, China
+        time_zh: 2026年三月
+        time_en: March 2026
+        rarity_zh: 常见
+        rarity_en: Common
+        description_zh: >-
+          对于每天要走什么路线非常有自己想法的一朵九岁的雪纳瑞云，
+          但只要拿出卤牛肉（少盐）就一定可以摸到。
+        description_en: >-
+          A nine-year-old schnauzer-shaped cloud with very firm opinions
+          about which route to walk each day — but a piece of low-salt
+          braised beef will guarantee a successful petting.
