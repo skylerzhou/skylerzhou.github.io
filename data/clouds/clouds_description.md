@@ -14,7 +14,7 @@ placeholder for now
 
 # Section 5: 高层云
 
-# Section 6: 云层云
+# Section 6: 雨层云
 
 # Section 7: 层积云
 
