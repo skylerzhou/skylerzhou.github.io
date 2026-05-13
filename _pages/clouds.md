@@ -1,6 +1,6 @@
 ---
 layout: page
-title: cloud collection
+title: cloud collecting
 permalink: /clouds/
 nav: false
 description:
@@ -188,7 +188,7 @@ _styles: >
 </section>
 
 <!-- ============== TABLE OF CONTENTS ============== -->
-<nav class="cloud-toc" id="toc" aria-label="cloud collection contents">
+<nav class="cloud-toc" id="toc" aria-label="cloud collecting contents">
   <h2 class="lang-en">Contents</h2>
   <h2 class="lang-zh">目录</h2>
   <p class="cloud-toc-hint lang-en">Click a section to jump.</p>

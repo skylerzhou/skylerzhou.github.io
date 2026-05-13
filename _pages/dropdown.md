@@ -5,6 +5,6 @@ nav: true
 nav_order: 2
 dropdown: true
 children:
-  - title: cloud collection
+  - title: cloud collecting
     permalink: /clouds/
 ---

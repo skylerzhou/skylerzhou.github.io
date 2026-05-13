@@ -12,7 +12,7 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Skyler Zhou's personal website.
 footer_text: >
   &copy; Skyler Zhou. Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-keywords: skyler zhou, personal website, cloud collection # add your own keywords or leave empty
+keywords: skyler zhou, personal website, cloud collecting # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ☁️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 

@@ -1,4 +1,4 @@
-# Cloud Collection data
+# Cloud Collecting data
 # ----------------------
 # The page renders 13 sections in order. Each section contains a list of "clouds".
 # A cloud entry can include:
@@ -80,7 +80,7 @@ sections:
     clouds:
       - image: dog-jin.jpg
         title_zh: 小今云
-        title_en: Little Jin
+        title_en: XiaoJin
         location_zh: 美国费城
         location_en: Philadelphia, USA
         time_zh: 2026年四月
@@ -98,7 +98,7 @@ sections:
 
       - image: dog-bei.jpg
         title_zh: 小贝云
-        title_en: Little Bei
+        title_en: XiaoBei
         location_zh: 中国南昌
         location_en: Nanchang, China
         time_zh: 2026年三月
@@ -109,7 +109,7 @@ sections:
           一块胖乎乎的五岁的比熊云，对陌生人类很害羞，需要耐心才能摸到。
         description_en: >-
           A round, five-year-old bichon-shaped cloud who is shy around
-          strangers — patience is required before you're allowed to pet her.
+          strangers — patience is required before you're allowed to pet him.
 
       - image: dog-ali.jpg
         title_zh: 阿力云
@@ -125,5 +125,5 @@ sections:
           但只要拿出卤牛肉（少盐）就一定可以摸到。
         description_en: >-
           A nine-year-old schnauzer-shaped cloud with very firm opinions
-          about which route to walk each day — but a piece of low-salt
-          braised beef will guarantee a successful petting.
+          about which route to walk each day — but a piece of beef will 
+          guarantee a successful petting.
