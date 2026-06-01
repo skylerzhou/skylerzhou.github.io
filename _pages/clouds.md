@@ -85,6 +85,18 @@ _styles: >
   .cloud-toc li {
     font-size: 0.93rem;
   }
+  .cloud-toc .cloud-toc-sub {
+    list-style: none;
+    padding-left: 1.1rem;
+    margin: 0.3rem 0 0.2rem;
+  }
+  .cloud-toc .cloud-toc-sub li {
+    font-size: 0.86rem;
+    margin-top: 0.2rem;
+  }
+  .cloud-toc .cloud-toc-sub .toc-num {
+    color: var(--global-text-color-light);
+  }
   .cloud-toc a {
     color: var(--global-text-color);
     text-decoration: none;
@@ -118,10 +130,33 @@ _styles: >
     margin-right: 0.5rem;
     font-variant-numeric: tabular-nums;
   }
+  .cloud-section-note {
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+    font-weight: 400;
+    margin-left: 0.5rem;
+  }
   .cloud-section-empty {
     color: var(--global-text-color-light);
     font-style: italic;
     font-size: 0.9rem;
+  }
+
+  /* ---------- subsections ---------- */
+  .cloud-subsection {
+    margin-top: 2.2rem;
+    scroll-margin-top: 80px;
+  }
+  .cloud-subsection h3.cloud-subsection-title {
+    font-size: 1.08rem;
+    font-weight: 500;
+    margin: 0 0 1rem;
+    color: var(--global-text-color);
+  }
+  .cloud-subsection .subsection-num {
+    color: var(--global-text-color-light);
+    margin-right: 0.45rem;
+    font-variant-numeric: tabular-nums;
   }
 
   /* ---------- cloud cards ---------- */
@@ -183,8 +218,8 @@ _styles: >
 <section class="cloud-preface" id="preface">
   <h2 class="lang-en">Preface</h2>
   <h2 class="lang-zh">前言</h2>
-  <p class="lang-en">Placeholder for now.</p>
-  <p class="lang-zh">placeholder for now</p>
+  <p class="lang-en">{{ site.data.clouds.preface_en }}</p>
+  <p class="lang-zh">{{ site.data.clouds.preface_zh }}</p>
 </section>
 
 <!-- ============== TABLE OF CONTENTS ============== -->
@@ -195,10 +230,23 @@ _styles: >
   <p class="cloud-toc-hint lang-zh">点击可以跳转到对应章节</p>
   <ol>
     {% for section in site.data.clouds.sections %}
+      {% assign n = forloop.index %}
       <li>
-        <a href="#section-{{ forloop.index }}">
-          <span class="toc-num">{{ forloop.index | prepend: '00' | slice: -2, 2 }}</span><span class="lang-en">{{ section.title_en }}</span><span class="lang-zh">{{ section.title_zh }}</span>
+        <a href="#section-{{ n }}">
+          <span class="toc-num">{{ n }}</span><span class="lang-en">{{ section.title_en }}</span><span class="lang-zh">{{ section.title_zh }}</span>
         </a>
+        {% assign sub_count = section.subsections | size %}
+        {% if sub_count > 1 %}
+          <ul class="cloud-toc-sub">
+            {% for sub in section.subsections %}
+              <li>
+                <a href="#section-{{ n }}-{{ forloop.index }}">
+                  <span class="toc-num">{{ n }}.{{ forloop.index }}</span><span class="lang-en">{{ sub.title_en }}</span><span class="lang-zh">{{ sub.title_zh }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </li>
     {% endfor %}
   </ol>
@@ -210,57 +258,73 @@ _styles: >
   <section class="cloud-section" id="section-{{ n }}">
     <h2 class="cloud-section-title">
       <span class="section-num">Section {{ n }}:</span><span class="lang-en">{{ section.title_en }}</span><span class="lang-zh">{{ section.title_zh }}</span>
+      {% if section.note_zh or section.note_en %}
+        <span class="cloud-section-note">
+          <span class="lang-en">{{ section.note_en | default: section.note_zh }}</span>
+          <span class="lang-zh">{{ section.note_zh | default: section.note_en }}</span>
+        </span>
+      {% endif %}
     </h2>
 
-    {% if section.clouds and section.clouds.size > 0 %}
-      <div class="cloud-list">
-        {% for cloud in section.clouds %}
-          <article class="cloud-card">
-            {% if cloud.image %}
-              <img
-                src="{{ '/assets/img/clouds/' | append: cloud.image | relative_url }}"
-                alt="{{ cloud.title_en | default: cloud.title_zh | escape }}"
-                loading="lazy"
-              />
-            {% endif %}
+    {% for sub in section.subsections %}
+      <div class="cloud-subsection" id="section-{{ n }}-{{ forloop.index }}">
+        {% unless sub.hide_title %}
+          <h3 class="cloud-subsection-title">
+            <span class="subsection-num">{{ n }}.{{ forloop.index }}</span><span class="lang-en">{{ sub.title_en }}</span><span class="lang-zh">{{ sub.title_zh }}</span>
+          </h3>
+        {% endunless %}
 
-            <h3 class="cloud-card-title">
-              <span class="lang-en">{{ cloud.title_en | default: cloud.title_zh }}</span>
-              <span class="lang-zh">{{ cloud.title_zh | default: cloud.title_en }}</span>
-            </h3>
+        {% if sub.clouds and sub.clouds.size > 0 %}
+          <div class="cloud-list">
+            {% for cloud in sub.clouds %}
+              <article class="cloud-card">
+                {% if cloud.image %}
+                  <img
+                    src="{{ '/assets/img/clouds/' | append: cloud.image | relative_url }}"
+                    alt="{{ cloud.title_en | default: cloud.title_zh | escape }}"
+                    loading="lazy"
+                  />
+                {% endif %}
 
-            <div class="cloud-card-meta">
-              <span>
-                <span class="lang-en">{{ cloud.location_en | default: cloud.location_zh }}</span>
-                <span class="lang-zh">{{ cloud.location_zh | default: cloud.location_en }}</span>
-              </span>
-              <span class="sep">·</span>
-              <span>
-                <span class="lang-en">{{ cloud.time_en | default: cloud.time_zh }}</span>
-                <span class="lang-zh">{{ cloud.time_zh | default: cloud.time_en }}</span>
-              </span>
-              {% if cloud.rarity_zh or cloud.rarity_en %}
-                <span class="sep">·</span>
-                <span>
-                  <span class="lang-en">{{ cloud.rarity_en | default: cloud.rarity_zh }}</span>
-                  <span class="lang-zh">{{ cloud.rarity_zh | default: cloud.rarity_en }}</span>
-                </span>
-              {% endif %}
-            </div>
+                <h4 class="cloud-card-title">
+                  <span class="lang-en">{{ cloud.title_en | default: cloud.title_zh }}</span>
+                  <span class="lang-zh">{{ cloud.title_zh | default: cloud.title_en }}</span>
+                </h4>
 
-            <p class="cloud-card-desc">
-              <span class="lang-en">{{ cloud.description_en | default: cloud.description_zh }}</span>
-              <span class="lang-zh">{{ cloud.description_zh | default: cloud.description_en }}</span>
-            </p>
-          </article>
-        {% endfor %}
+                <div class="cloud-card-meta">
+                  <span>
+                    <span class="lang-en">{{ cloud.location_en | default: cloud.location_zh }}</span>
+                    <span class="lang-zh">{{ cloud.location_zh | default: cloud.location_en }}</span>
+                  </span>
+                  <span class="sep">·</span>
+                  <span>
+                    <span class="lang-en">{{ cloud.time_en | default: cloud.time_zh }}</span>
+                    <span class="lang-zh">{{ cloud.time_zh | default: cloud.time_en }}</span>
+                  </span>
+                  {% if cloud.rarity_zh or cloud.rarity_en %}
+                    <span class="sep">·</span>
+                    <span>
+                      <span class="lang-en">{{ cloud.rarity_en | default: cloud.rarity_zh }}</span>
+                      <span class="lang-zh">{{ cloud.rarity_zh | default: cloud.rarity_en }}</span>
+                    </span>
+                  {% endif %}
+                </div>
+
+                <p class="cloud-card-desc">
+                  <span class="lang-en">{{ cloud.description_en | default: cloud.description_zh }}</span>
+                  <span class="lang-zh">{{ cloud.description_zh | default: cloud.description_en }}</span>
+                </p>
+              </article>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p class="cloud-section-empty">
+            <span class="lang-en">To be collected…</span>
+            <span class="lang-zh">待收集……</span>
+          </p>
+        {% endif %}
       </div>
-    {% else %}
-      <p class="cloud-section-empty">
-        <span class="lang-en">Coming soon.</span>
-        <span class="lang-zh">敬请期待。</span>
-      </p>
-    {% endif %}
+    {% endfor %}
 
     <a class="cloud-back-to-toc" href="#toc">
       <span class="lang-en">↑ Back to contents</span>

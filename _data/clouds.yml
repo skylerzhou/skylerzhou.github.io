@@ -1,129 +1,443 @@
 # Cloud Collecting data
 # ----------------------
-# The page renders 13 sections in order. Each section contains a list of "clouds".
+# The page renders top-level sections (云族 / families), each with subsections
+# (个别云属 / individual cloud types). Each subsection holds a list of "clouds".
+#
 # A cloud entry can include:
-#   image            – filename inside assets/img/clouds/
+#   image            – filename inside assets/img/clouds/ (use ASCII names)
 #   title_zh / title_en
 #   location_zh / location_en
 #   time_zh / time_en
 #   rarity_zh / rarity_en       (稀有程度)
 #   description_zh / description_en
 #
+# A subsection with an empty `clouds: []` list renders a "coming soon" note.
+#
 # To add a new cloud:
-#   1. Drop the photo in assets/img/clouds/ (use ASCII filenames like "cirrus-01.jpg").
-#   2. Append a new item under the appropriate section's `clouds:` list.
+#   1. Drop the photo in assets/img/clouds/ (ASCII filename like "cirrus-01.jpg").
+#   2. Append a new item under the appropriate subsection's `clouds:` list.
+
+# Preface text shown above the table of contents.
+preface_zh: >-
+  一年四季仰望看到的形态各异的云朵们，感谢它们的存在让我知道这个世界有这么地大这么地美好。
+  在分类过往看到的云的过程中（参考：《云彩收集者手册》《国际云图集》），我也发现还有很多云不起眼但也值得收集，
+  有很多云奇妙却转瞬即逝，还有些云只在特定的经纬度和极端的天气条件下才会出现，需要一辈子的时间才能幸运地碰上那么一两次。
+  我会继续仰望天空，继续记录和收集看到的各式各样的云彩。
+  同时因为我不是专业气象学家，辨别云朵类型依靠的只有图鉴和 Claude，所以这个网页里可能会有一些错误的分类。
+  如果你看到了可以联系我进行指正，我会修改。
+preface_en: >-
+  Looking up through every season, I am grateful for these endlessly varied clouds —
+  they remind me how vast and beautiful this world is. While sorting through the clouds
+  I have seen (references: The Cloud Collector's Handbook and the International Cloud Atlas),
+  I realized that many clouds are unremarkable yet still worth collecting, that many are
+  wondrous but fleeting, and that some appear only at certain latitudes and under extreme
+  weather — so rare you might wait a lifetime to be lucky enough to catch one or two.
+  I will keep looking up, and keep recording and collecting the clouds I see. Since I am
+  not a professional meteorologist and rely only on field guides and Claude to identify
+  cloud types, there may be some mistaken classifications on this page. If you spot one,
+  please reach out and let me know — I will correct it.
 
 sections:
-  - id: cirrus
-    title_zh: 卷云
-    title_en: Cirrus
-    clouds: []
+  - id: low
+    title_zh: 低云族
+    title_en: Low clouds
+    note_zh: 云朵高度低于 2000 米
+    note_en: Cloud base below 2,000 m
+    subsections:
+      - id: cumulus
+        title_zh: 积云
+        title_en: Cumulus
+        clouds:
+          - image: cumulus-everglades.jpeg
+            title_zh: 积云
+            title_en: Cumulus
+            location_zh: 美国佛罗里达州大沼泽地国家公园
+            location_en: Everglades National Park, Florida, USA
+            time_zh: 2026年三月
+            time_en: March 2026
+            rarity_zh: 常见
+            rarity_en: Common
+            description_zh: >-
+              在大沼泽地国家公园骑行途中遇到的积云，大朵大朵地像棉絮一样散落在天空中，
+              骑行到云朵底下时可以短暂躲避太阳的直射。
+            description_en: >-
+              Cumulus clouds met while cycling through Everglades National Park —
+              great cottony tufts scattered across the sky. Riding beneath one
+              gave a brief moment of shade from the direct sun.
 
-  - id: cirrocumulus
-    title_zh: 卷积云
-    title_en: Cirrocumulus
-    clouds: []
+          - image: cumulus-humilis-florida.jpg
+            title_zh: 淡积云
+            title_en: Cumulus humilis
+            location_zh: 美国佛罗里达州
+            location_en: Florida, USA
+            time_zh: 2024年八月
+            time_en: August 2024
+            rarity_zh: 常见
+            rarity_en: Common
+            description_zh: >-
+              散落在山脉间的淡积云场，是一个起飞降落的好天气。
+            description_en: >-
+              A field of cumulus humilis scattered between the mountains —
+              fair weather, good for taking off and landing.
 
-  - id: cirrostratus
-    title_zh: 卷层云
-    title_en: Cirrostratus
-    clouds: []
+          - image: cumulus-congestus-hawaii.jpeg
+            title_zh: 浓积云
+            title_en: Cumulus congestus
+            location_zh: 美国夏威夷州大岛
+            location_en: Big Island, Hawaii, USA
+            time_zh: 2024年十二月
+            time_en: December 2024
+            rarity_zh: 常见
+            rarity_en: Common
+            description_zh: >-
+              爬上火山顶时看到山上压着的一朵厚重的积云，分不清是我们爬山爬累了觉得空气有些厚重，
+              还是风确实湿润沉重。
+            description_en: >-
+              A heavy cumulus pressing down on the summit as we climbed the volcano.
+              Hard to tell whether the air truly felt thick and damp, or whether we
+              were just worn out from the hike.
 
-  - id: altocumulus
-    title_zh: 高积云
-    title_en: Altocumulus
-    clouds: []
+      - id: stratocumulus
+        title_zh: 层积云
+        title_en: Stratocumulus
+        clouds:
+          - image: stratocumulus-sichuan.jpg
+            title_zh: 层积云
+            title_en: Stratocumulus
+            location_zh: 中国川西
+            location_en: Western Sichuan, China
+            time_zh: 2023年八月
+            time_en: August 2023
+            rarity_zh: 常见
+            rarity_en: Common
+            description_zh: >-
+              车开到川西的塔公寺附近时，天在间间断断地下雨。站在山顶上看，
+              相较于地面来说，感觉自己离云朵底部更近一些。
+            description_en: >-
+              Near Tagong Monastery in western Sichuan it rained on and off.
+              Standing on the hilltop, I felt closer to the base of the clouds
+              than to the ground below.
 
-  - id: altostratus
-    title_zh: 高层云
-    title_en: Altostratus
-    clouds: []
+          - image: stratocumulus-miami.jpg
+            title_zh: 层积云
+            title_en: Stratocumulus
+            location_zh: 美国佛罗里达州迈阿密
+            location_en: Miami, Florida, USA
+            time_zh: 2026年三月
+            time_en: March 2026
+            rarity_zh: 常见
+            rarity_en: Common
+            description_zh: >-
+              春假去迈阿密玩没想到遇上了风暴天，在海滩边走走，
+              看看海鸥被大风吹得四仰八叉也很有意思。
+            description_en: >-
+              A spring-break trip to Miami that unexpectedly ran into stormy weather.
+              Walking along the beach and watching the gulls get tossed about by the
+              wind turned out to be its own kind of fun.
 
-  - id: nimbostratus
-    title_zh: 云层云
-    title_en: Nimbostratus
-    clouds: []
+      - id: stratus
+        title_zh: 层云
+        title_en: Stratus
+        clouds:
+          - image: stratus-sichuan.jpg
+            title_zh: 层云
+            title_en: Stratus
+            location_zh: 中国川西
+            location_en: Western Sichuan, China
+            time_zh: 2023年八月
+            time_en: August 2023
+            rarity_zh: 常见
+            rarity_en: Common
+            description_zh: >-
+              像炊烟一样从山谷里飘出来的云，不确定是不是层云，
+              但是因为层云是所有云中高度最低的，所以先放在这个分类里。
+            description_en: >-
+              A cloud drifting out of the valley like cooking smoke. I'm not sure
+              it really is stratus, but since stratus is the lowest of all clouds,
+              I've placed it in this category for now.
 
-  - id: stratocumulus
-    title_zh: 层积云
-    title_en: Stratocumulus
-    clouds: []
+  - id: middle
+    title_zh: 中云族
+    title_en: Middle clouds
+    subsections:
+      - id: altostratus
+        title_zh: 高层云
+        title_en: Altostratus
+        clouds: []
 
-  - id: stratus
-    title_zh: 层云
-    title_en: Stratus
-    clouds: []
+      - id: altocumulus
+        title_zh: 高积云
+        title_en: Altocumulus
+        clouds:
+          - image: altocumulus-philly.jpg
+            title_zh: 高积云
+            title_en: Altocumulus
+            location_zh: 美国宾夕法尼亚州费城
+            location_en: Philadelphia, Pennsylvania, USA
+            time_zh: 2025年八月
+            time_en: August 2025
+            rarity_zh: 常见
+            rarity_en: Common
+            description_zh: >-
+              呈团块状的有些像鱼鳞的高积云，在背离太阳的一侧有阴影。
+            description_en: >-
+              Altocumulus in clumped, fish-scale-like patches, shaded on the
+              side facing away from the sun.
 
-  - id: cumulus
-    title_zh: 积云
-    title_en: Cumulus
-    clouds: []
+  - id: high
+    title_zh: 高云族
+    title_en: High clouds
+    subsections:
+      - id: cirrus
+        title_zh: 卷云
+        title_en: Cirrus
+        clouds:
+          - image: cirrus-vertebratus-nj.jpg
+            title_zh: 脊状卷云
+            title_en: Cirrus vertebratus
+            location_zh: 美国新泽西州
+            location_en: New Jersey, USA
+            time_zh: 2026年四月
+            time_en: April 2026
+            rarity_zh: 常见
+            rarity_en: Common
+            description_zh: >-
+              飘渺舒展的丝状卷云，看上去有点像带着脊柱的鱼骨头。
+            description_en: >-
+              Wispy, outstretched filaments of cirrus that look a little like
+              a fish's spine and ribs.
 
-  - id: cumulonimbus
-    title_zh: 积雨云
-    title_en: Cumulonimbus
-    clouds: []
+      - id: cirrocumulus
+        title_zh: 卷积云
+        title_en: Cirrocumulus
+        clouds: []
 
-  - id: special
-    title_zh: 特殊云
-    title_en: Special clouds
-    clouds: []
+      - id: cirrostratus
+        title_zh: 卷层云
+        title_en: Cirrostratus
+        clouds:
+          - image: cirrostratus-canton.jpg
+            title_zh: 卷层云
+            title_en: Cirrostratus
+            location_zh: 美国纽约州坎顿
+            location_en: Canton, New York, USA
+            time_zh: 2020年六月
+            time_en: June 2020
+            rarity_zh: 较为少见
+            rarity_en: Somewhat uncommon
+            description_zh: >-
+              毛边质地的铺展得很开的云，虽然高度不是特别高，
+              但是因为能看到日晕，所以先归类为卷层云。
+            description_en: >-
+              A widely spread cloud with a feathery texture. It isn't especially
+              high, but because a solar halo was visible I've classified it as
+              cirrostratus for now.
+
+  - id: multi
+    title_zh: 多个云族
+    title_en: Multiple families
+    subsections:
+      - id: cumulonimbus
+        title_zh: 积雨云
+        title_en: Cumulonimbus
+        clouds:
+          - image: cumulonimbus-yellowstone.jpg
+            title_zh: 积雨云
+            title_en: Cumulonimbus
+            location_zh: 美国黄石国家公园
+            location_en: Yellowstone National Park, USA
+            time_zh: 2024年八月
+            time_en: August 2024
+            rarity_zh: 常见
+            rarity_en: Common
+            description_zh: >-
+              一朵完美的积雨云，下面倾泻的雨有一点像蘑菇的菇柄。
+            description_en: >-
+              A perfect cumulonimbus, with the rain pouring beneath it looking
+              a little like the stalk of a mushroom.
+
+          - image: cumulonimbus-mammatus-philly.jpeg
+            title_zh: 积雨云的悬球状云底部
+            title_en: Mammatus beneath a cumulonimbus
+            location_zh: 美国宾夕法尼亚州费城
+            location_en: Philadelphia, Pennsylvania, USA
+            time_zh: 2024年六月
+            time_en: June 2024
+            rarity_zh: 罕见
+            rarity_en: Rare
+            description_zh: >-
+              黄昏暴雨过后，从积云底部悬吊下来一个个半球，
+              将坠的太阳给它们染上末日一般的颜色，震撼且不真实。
+            description_en: >-
+              After a torrential downpour at dusk, half-spheres hung down from the
+              base of the cloud. The setting sun stained them an apocalyptic color —
+              stunning and unreal.
+
+          - image: cumulonimbus-anvil-vegas.jpg
+            title_zh: 积雨云的砧状顶部
+            title_en: Anvil top of a cumulonimbus
+            location_zh: 美国内华达州拉斯维加斯
+            location_en: Las Vegas, Nevada, USA
+            time_zh: 2025年八月
+            time_en: August 2025
+            rarity_zh: 较为少见
+            rarity_en: Somewhat uncommon
+            description_zh: >-
+              飞机从云上降下，快要抵达拉斯维加斯时看到的远处的一片砧状云。
+              空旷的一望无际的沙漠让巨大的云也失去了 scale，
+              让人感觉远处的云和地面只要伸手就能够到。
+            description_en: >-
+              An anvil cloud in the distance, seen as the plane descended on its
+              approach to Las Vegas. The vast, empty desert robbed even this enormous
+              cloud of any sense of scale, making it feel as if the far-off cloud and
+              the ground were close enough to touch.
+
+      - id: nimbostratus
+        title_zh: 雨层云
+        title_en: Nimbostratus
+        clouds: []
+
+  - id: other
+    title_zh: 其他的云
+    title_en: Other clouds
+    subsections:
+      - id: contrail
+        title_zh: 航迹云
+        title_en: Contrail
+        clouds:
+          - image: contrail-philly.jpg
+            title_zh: 航迹云
+            title_en: Contrail
+            location_zh: 美国宾夕法尼亚州费城
+            location_en: Philadelphia, Pennsylvania, USA
+            time_zh: 2025年五月
+            time_en: May 2025
+            rarity_zh: 常见
+            rarity_en: Common
+            description_zh: >-
+              飞机飞过的痕迹，随着时间渐渐扩散开来。
+            description_en: >-
+              The trail left by a passing plane, slowly spreading out over time.
+
+      - id: pyrocumulus
+        title_zh: 火积云
+        title_en: Pyrocumulus
+        clouds:
+          - image: pyrocumulus-hawaii.jpg
+            title_zh: 有管状云特征的火积云
+            title_en: Pyrocumulus with tube-like features
+            location_zh: 美国夏威夷州大岛
+            location_en: Big Island, Hawaii, USA
+            time_zh: 2024年十二月
+            time_en: December 2024
+            rarity_zh: 少见
+            rarity_en: Uncommon
+            description_zh: >-
+              和朋友站在海边看落日，彼时还不知道火山在喷发，
+              只看到远远的火山上，天边像城墙一样卷起来了灰色的云。
+            description_en: >-
+              Watching the sunset at the shore with a friend, not yet knowing the
+              volcano was erupting — only seeing, far off above it, gray clouds
+              curling up at the horizon like a city wall.
 
   - id: optical
     title_zh: 光学现象
     title_en: Optical phenomena
-    clouds: []
+    subsections:
+      - id: corona
+        title_zh: 华
+        title_en: Corona
+        clouds:
+          - image: corona-nj.jpg
+            title_zh: 日华
+            title_en: Solar corona
+            location_zh: 美国新泽西州
+            location_en: New Jersey, USA
+            time_zh: 2026年四月
+            time_en: April 2026
+            rarity_zh: 较为常见
+            rarity_en: Fairly common
+            description_zh: >-
+              开车时偶然抬头看见的日华。
+            description_en: >-
+              A solar corona glimpsed by chance when I looked up while driving.
+
+      - id: rainbow
+        title_zh: 虹
+        title_en: Rainbow
+        clouds:
+          - image: rainbow-philly.jpeg
+            title_zh: 彩虹
+            title_en: Rainbow
+            location_zh: 美国宾夕法尼亚州费城
+            location_en: Philadelphia, Pennsylvania, USA
+            time_zh: 2024年九月
+            time_en: September 2024
+            rarity_zh: 较为常见
+            rarity_en: Fairly common
+            description_zh: >-
+              夏日傍晚雨后的双彩虹笼住了整个费城，不知道为什么虹内光照更亮，
+              虹外天空和云彩颜色都要暗一些，非常神奇。
+            description_en: >-
+              A double rainbow after a summer-evening rain wrapped around the whole
+              of Philadelphia. Strangely, the sky inside the bow was brighter while
+              the sky and clouds outside it looked darker — wonderfully magical.
 
   - id: dog
     title_zh: 小狗云
     title_en: Dog clouds
-    clouds:
-      - image: dog-jin.jpg
-        title_zh: 小今云
-        title_en: XiaoJin
-        location_zh: 美国费城
-        location_en: Philadelphia, USA
-        time_zh: 2026年四月
-        time_en: April 2026
-        rarity_zh: 常见
-        rarity_en: Common
-        description_zh: >-
-          在春天的草地上发现的一块特殊的八个月的小狗云，形状似骑士比熊犬，
-          在费城大学城非常常见，会跟所有路上遇到的人类热情地打招呼。
-        description_en: >-
-          A special eight-month-old puppy cloud spotted on a spring lawn,
-          shaped like a Cavalier King Charles bichon. Very common around
-          University City Philadelphia and greets every human it meets
-          with great enthusiasm.
+    subsections:
+      - id: dogs
+        title_zh: 小狗云
+        title_en: Dog clouds
+        hide_title: true
+        clouds:
+          - image: dog-jin.jpg
+            title_zh: 小今云
+            title_en: XiaoJin
+            location_zh: 美国费城
+            location_en: Philadelphia, USA
+            time_zh: 2026年四月
+            time_en: April 2026
+            rarity_zh: 常见
+            rarity_en: Common
+            description_zh: >-
+              在春天的草地上发现的一块特殊的八个月的小狗云，形状似骑士比熊犬，
+              在费城大学城非常常见，会跟所有路上遇到的人类热情地打招呼。
+            description_en: >-
+              A special eight-month-old puppy cloud spotted on a spring lawn,
+              shaped like a Cavalier King Charles bichon. Very common around
+              University City Philadelphia and greets every human it meets
+              with great enthusiasm.
 
-      - image: dog-bei.jpg
-        title_zh: 小贝云
-        title_en: XiaoBei
-        location_zh: 中国南昌
-        location_en: Nanchang, China
-        time_zh: 2026年三月
-        time_en: March 2026
-        rarity_zh: 较为少见
-        rarity_en: Somewhat rare
-        description_zh: >-
-          一块胖乎乎的五岁的比熊云，对陌生人类很害羞，需要耐心才能摸到。
-        description_en: >-
-          A round, five-year-old bichon-shaped cloud who is shy around
-          strangers — patience is required before you're allowed to pet him.
+          - image: dog-bei.jpg
+            title_zh: 小贝云
+            title_en: XiaoBei
+            location_zh: 中国南昌
+            location_en: Nanchang, China
+            time_zh: 2026年三月
+            time_en: March 2026
+            rarity_zh: 较为少见
+            rarity_en: Somewhat rare
+            description_zh: >-
+              一块胖乎乎的五岁的比熊云，对陌生人类很害羞，需要耐心才能摸到。
+            description_en: >-
+              A round, five-year-old bichon-shaped cloud who is shy around
+              strangers — patience is required before you're allowed to pet him.
 
-      - image: dog-ali.jpg
-        title_zh: 阿力云
-        title_en: Ali
-        location_zh: 中国南昌
-        location_en: Nanchang, China
-        time_zh: 2026年三月
-        time_en: March 2026
-        rarity_zh: 常见
-        rarity_en: Common
-        description_zh: >-
-          对于每天要走什么路线非常有自己想法的一朵九岁的雪纳瑞云，
-          但只要拿出卤牛肉（少盐）就一定可以摸到。
-        description_en: >-
-          A nine-year-old schnauzer-shaped cloud with very firm opinions
-          about which route to walk each day — but a piece of beef will 
-          guarantee a successful petting.
+          - image: dog-ali.jpg
+            title_zh: 阿力云
+            title_en: Ali
+            location_zh: 中国南昌
+            location_en: Nanchang, China
+            time_zh: 2026年三月
+            time_en: March 2026
+            rarity_zh: 常见
+            rarity_en: Common
+            description_zh: >-
+              对于每天要走什么路线非常有自己想法的一朵九岁的雪纳瑞云，
+              但只要拿出卤牛肉（少盐）就一定可以摸到。
+            description_en: >-
+              A nine-year-old schnauzer-shaped cloud with very firm opinions
+              about which route to walk each day — but a piece of beef will
+              guarantee a successful petting.
