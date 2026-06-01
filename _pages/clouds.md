@@ -160,22 +160,43 @@ _styles: >
   }
 
   /* ---------- cloud cards ---------- */
+  /* Layout: a small image on the left, text on the right (inspired by
+     yuyan-ge.com/gallery). Stacks vertically on narrow screens. */
   .cloud-list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2.2rem;
   }
-  .cloud-card { display: flex; flex-direction: column; }
-  .cloud-card img {
+  .cloud-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.4rem;
+  }
+  .cloud-card-img {
+    flex: 0 0 240px;
+    width: 240px;
+    max-width: 40%;
+  }
+  .cloud-card-img img {
     width: 100%;
     height: auto;
     border-radius: 6px;
     box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+    display: block;
+  }
+  .cloud-card-body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  @media (max-width: 576px) {
+    .cloud-card { flex-direction: column; gap: 0.85rem; }
+    .cloud-card-img { flex-basis: auto; width: 100%; max-width: 100%; }
   }
   .cloud-card-title {
     font-size: 1.1rem;
     font-weight: 500;
-    margin: 0.85rem 0 0.25rem;
+    margin: 0 0 0.25rem;
     color: var(--global-text-color);
   }
   .cloud-card-meta {
@@ -279,41 +300,45 @@ _styles: >
             {% for cloud in sub.clouds %}
               <article class="cloud-card">
                 {% if cloud.image %}
-                  <img
-                    src="{{ '/assets/img/clouds/' | append: cloud.image | relative_url }}"
-                    alt="{{ cloud.title_en | default: cloud.title_zh | escape }}"
-                    loading="lazy"
-                  />
+                  <div class="cloud-card-img">
+                    <img
+                      src="{{ '/assets/img/clouds/' | append: cloud.image | relative_url }}"
+                      alt="{{ cloud.title_en | default: cloud.title_zh | escape }}"
+                      loading="lazy"
+                    />
+                  </div>
                 {% endif %}
 
-                <h4 class="cloud-card-title">
-                  <span class="lang-en">{{ cloud.title_en | default: cloud.title_zh }}</span>
-                  <span class="lang-zh">{{ cloud.title_zh | default: cloud.title_en }}</span>
-                </h4>
+                <div class="cloud-card-body">
+                  <h4 class="cloud-card-title">
+                    <span class="lang-en">{{ cloud.title_en | default: cloud.title_zh }}</span>
+                    <span class="lang-zh">{{ cloud.title_zh | default: cloud.title_en }}</span>
+                  </h4>
 
-                <div class="cloud-card-meta">
-                  <span>
-                    <span class="lang-en">{{ cloud.location_en | default: cloud.location_zh }}</span>
-                    <span class="lang-zh">{{ cloud.location_zh | default: cloud.location_en }}</span>
-                  </span>
-                  <span class="sep">·</span>
-                  <span>
-                    <span class="lang-en">{{ cloud.time_en | default: cloud.time_zh }}</span>
-                    <span class="lang-zh">{{ cloud.time_zh | default: cloud.time_en }}</span>
-                  </span>
-                  {% if cloud.rarity_zh or cloud.rarity_en %}
+                  <div class="cloud-card-meta">
+                    <span>
+                      <span class="lang-en">{{ cloud.location_en | default: cloud.location_zh }}</span>
+                      <span class="lang-zh">{{ cloud.location_zh | default: cloud.location_en }}</span>
+                    </span>
                     <span class="sep">·</span>
                     <span>
-                      <span class="lang-en">{{ cloud.rarity_en | default: cloud.rarity_zh }}</span>
-                      <span class="lang-zh">{{ cloud.rarity_zh | default: cloud.rarity_en }}</span>
+                      <span class="lang-en">{{ cloud.time_en | default: cloud.time_zh }}</span>
+                      <span class="lang-zh">{{ cloud.time_zh | default: cloud.time_en }}</span>
                     </span>
-                  {% endif %}
-                </div>
+                    {% if cloud.rarity_zh or cloud.rarity_en %}
+                      <span class="sep">·</span>
+                      <span>
+                        <span class="lang-en">{{ cloud.rarity_en | default: cloud.rarity_zh }}</span>
+                        <span class="lang-zh">{{ cloud.rarity_zh | default: cloud.rarity_en }}</span>
+                      </span>
+                    {% endif %}
+                  </div>
 
-                <p class="cloud-card-desc">
-                  <span class="lang-en">{{ cloud.description_en | default: cloud.description_zh }}</span>
-                  <span class="lang-zh">{{ cloud.description_zh | default: cloud.description_en }}</span>
-                </p>
+                  <p class="cloud-card-desc">
+                    <span class="lang-en">{{ cloud.description_en | default: cloud.description_zh }}</span>
+                    <span class="lang-zh">{{ cloud.description_zh | default: cloud.description_en }}</span>
+                  </p>
+                </div>
               </article>
             {% endfor %}
           </div>
