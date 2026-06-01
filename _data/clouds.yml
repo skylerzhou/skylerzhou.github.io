@@ -19,23 +19,23 @@
 
 # Preface text shown above the table of contents.
 preface_zh: >-
-  以下是我一年四季仰望看到的形态各异的云朵们，感谢它们的存在让我知道这个世界这么大这么美好。
+  以下是我一年四季仰望看到的形态各异的云朵们，感谢它们的存在让我知道这个世界这么广阔美好。
   在分类过往看到的云的过程中（Reference：云彩收集者手册，国际云图集），我也发现还有很多云不起眼但也值得收集，
   有很多云奇妙却转瞬即逝，还有些云只在特定的经纬度和极端的天气条件下才会出现，需要一辈子的时间才能幸运地碰上那么一两次。
   我会继续仰望天空，继续记录和收集看到的各式各样的云彩的。
-  同时因为我不是专业气象学家，辨别云朵类型依靠的只有图鉴和 Claude，所以这个网页里可能会有一些错误的分类，
-  欢迎联系我进行指正修改 : D.
+  同时因为我不是专业气象学家，辨别云朵类型依靠的只有图鉴和 Claude，
+  如果你看到这个网页里存在错误的分类，欢迎联系我进行指正修改，谢谢！
 preface_en: >-
   Below are the endlessly varied clouds I've looked up at through all four seasons —
-  I'm grateful they exist, for they remind me how vast and beautiful this world is.
+  I'm grateful they exist, for they remind me how vast and wonderful this world is.
   While sorting through the clouds I've seen (Reference: The Cloud Collector's Handbook,
   the International Cloud Atlas), I found that many are unremarkable yet still worth
   collecting, that many are wondrous but fleeting, and that some appear only at certain
   latitudes and under extreme weather — so rare you might wait a lifetime to be lucky
   enough to catch one or two. I'll keep looking up, and keep recording and collecting all
   the different clouds I see. Since I'm not a professional meteorologist and rely only on
-  field guides and Claude to identify cloud types, there may be some mistaken
-  classifications on this page — feel free to reach out and correct me : D.
+  field guides and Claude to identify cloud types, if you spot a mistaken classification
+  on this page, please reach out and let me know — thank you!
 
 sections:
   - id: low
@@ -159,6 +159,8 @@ sections:
   - id: middle
     title_zh: 中云族
     title_en: Middle clouds
+    note_zh: 云底高度 2000–7000 米
+    note_en: Cloud base 2,000–7,000 m
     subsections:
       - id: altostratus
         title_zh: 高层云
@@ -187,6 +189,8 @@ sections:
   - id: high
     title_zh: 高云族
     title_en: High clouds
+    note_zh: 云底高度 5000–13500 米
+    note_en: Cloud base 5,000–13,500 m
     subsections:
       - id: cirrus
         title_zh: 卷云
@@ -236,6 +240,8 @@ sections:
   - id: multi
     title_zh: 多个云族
     title_en: Multiple families
+    note_zh: 贯穿不止一个云族
+    note_en: Spanning more than one family
     subsections:
       - id: cumulonimbus
         title_zh: 积雨云

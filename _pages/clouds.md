@@ -174,9 +174,9 @@ _styles: >
     gap: 1.4rem;
   }
   .cloud-card-img {
-    flex: 0 0 240px;
-    width: 240px;
-    max-width: 40%;
+    flex: 0 0 60%;
+    width: 60%;
+    max-width: 60%;
   }
   .cloud-card-img img {
     width: 100%;
