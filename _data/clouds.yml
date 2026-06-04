@@ -389,6 +389,34 @@ sections:
               of Philadelphia. Strangely, the sky inside the bow was brighter while
               the sky and clouds outside it looked darker — wonderfully magical.
 
+      - id: parhelion
+        title_zh: 幻日
+        title_en: Sundog
+        clouds:
+          - image: sundog-philly.jpg
+            title_zh: 幻日
+            title_en: Sundog
+            location_zh: 美国宾夕法尼亚州费城
+            location_en: Philadelphia, Pennsylvania, USA
+            time_zh: 2026年六月
+            time_en: June 2026
+            rarity_zh: 较为常见
+            rarity_en: Fairly common
+            description_zh: >-
+              冰晶般的天空上飘逸着羽毛般的卷云，淡淡的、灰度比较高的光斑出现在太阳左右约 22 度的位置。
+              不同语言里对这个光学现象的描述也很有意思：中文里因为光斑和太阳平齐，所以唤其为幻日，虚幻的太阳；
+              英文里把光斑描述为在太阳左右的两个小跟班，称呼它们为 Sundog。
+              在傍晚遛狗时仰头看到陪伴着太阳的两个光斑，低头看到跟着我的小狗，觉得很温暖。
+            description_en: >-
+              Feathery cirrus drifted across an ice-crystal sky, and faint, grayish
+              spots of light appeared about 22 degrees to either side of the sun. It's
+              fascinating how different languages describe this phenomenon: in Chinese,
+              because the spots sit level with the sun, they're called 幻日 — "illusory
+              suns"; in English they're imagined as two little companions flanking the
+              sun, and called sundogs. Looking up while walking my dog at dusk, I saw the
+              two spots of light keeping the sun company, and looking down saw the puppy
+              following me — it felt very warm.
+
   - id: dog
     title_zh: 小狗云
     title_en: Dog clouds

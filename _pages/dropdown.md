@@ -7,4 +7,6 @@ dropdown: true
 children:
   - title: cloud collecting
     permalink: /clouds/
+  - title: stargazing
+    permalink: /stargazing/
 ---
