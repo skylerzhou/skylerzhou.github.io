@@ -144,6 +144,14 @@ Time: 2024年九月
 稀有程度：较为常见
 Description: 夏日傍晚雨后的双彩虹笼住了整个费城，不知道为什么虹内光照更亮，虹外天空和云彩颜色都要暗一些，非常神奇
 
+## 6.3: 幻日
+Path: /Users/zhouzican/Documents/Projects/skylerzhou.github.io/data/clouds/光学现象/幻日_美国费城.JPG
+Title: 幻日
+Location: 美国宾夕法尼亚州费城
+Time: 2026年六月
+稀有程度：较为常见
+Description: 冰晶般的天空上飘逸着羽毛般的卷云，淡淡的，灰度比较高的光斑出现在太阳左右约22度的位置。不同语言里对这个光学现象的描述也很有意思：中文里因为光斑和太阳平齐，所以唤其为幻日，虚幻的太阳；英文里把光斑描述为在太阳左右的两个小跟班，称呼它们为Sundog。 在傍晚遛狗时仰头看到陪伴着太阳的两个光斑，低头看到跟着我的小狗，觉得很温暖。
+
 
 # Section 7: 小狗云
 Path: /Users/zhousk/Documents/Projects/skylerzhou.github.io/data/clouds/小今云.JPG
