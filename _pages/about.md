@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle:
 
@@ -20,8 +20,10 @@ latest_posts:
   enabled: false
 ---
 
-Hi, I'm **Skyler Zhou** — welcome to my corner of the web ☁️
+Hi! My name is Skyler Zhou (周子灿). I am currently a Clinical Research Coordinator working at [Pennsieve](https://discover.pennsieve.io/), where I process, curate, and visualize multimodal neurological data to aid and speed up scientific research processes. 
 
-I'm based in Philadelphia, PA. This is a small space where I keep track of things I'm working on and things I'm noticing — including a slowly growing collection of clouds I've photographed along the way.
+Before joining Pennseive, I worked as a Student Researcher at the Center of Neuroengineering and Therapetics in the University of Pennsylvania under the guidance of [Dr. Erin Conrad](https://scholar.google.com/citations?user=Bd4TfIcAAAAJ&hl=en). I applied signal processing and statistical analysis to intracranial EEG to investigate factors driving seizure propagation.
 
-Feel free to look around. The links at the bottom of the page are the easiest way to reach me.
+My work sits at the intersection of neuroscience, data engineering, and analytics. I am particularly interested in building the data infrastructure and analytical tools that transform complex neural and clinical data into technologies that support scientific discovery, clinical decision-making, and next-generation neurotechnologies.
+
+

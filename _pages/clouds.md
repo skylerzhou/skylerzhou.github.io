@@ -1,6 +1,6 @@
 ---
 layout: page
-title: cloud collecting
+title: Cloud collecting
 permalink: /clouds/
 nav: false
 description:

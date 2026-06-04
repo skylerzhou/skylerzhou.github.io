@@ -1,9 +1,9 @@
 ---
 layout: page
-title: stargazing
+title: Stargazing
 permalink: /stargazing/
 nav: false
-description: chasing meteor showers and the night sky
+description:
 _styles: >
   .stargazing-note {
     line-height: 1.8;

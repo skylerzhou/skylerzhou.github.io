@@ -1,12 +1,12 @@
 ---
 layout: page
-title: others
+title: Misc
 nav: true
 nav_order: 2
 dropdown: true
 children:
-  - title: cloud collecting
+  - title: Cloud collecting
     permalink: /clouds/
-  - title: stargazing
+  - title: Stargazing
     permalink: /stargazing/
 ---
