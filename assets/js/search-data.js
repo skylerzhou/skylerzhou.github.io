@@ -4,20 +4,27 @@ const ninja = document.querySelector('ninja-keys');
 // add the home and posts menu items
 ninja.data = [{
     id: "nav-about",
-    title: "about",
+    title: "About",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "dropdown-cloud-collecting",
-              title: "cloud collecting",
+  },{id: "nav-projects",
+          title: "Projects",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "dropdown-cloud-collecting",
+              title: "Cloud collecting",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "/clouds/";
               },
             },{id: "dropdown-stargazing",
-              title: "stargazing",
+              title: "Stargazing",
               description: "",
               section: "Dropdown",
               handler: () => {
