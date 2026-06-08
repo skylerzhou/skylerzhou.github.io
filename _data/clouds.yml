@@ -20,7 +20,7 @@
 # Preface text shown above the table of contents.
 preface_zh: >-
   以下是我一年四季仰望看到的形态各异的云朵们，感谢它们的存在让我知道这个世界这么广阔美好。
-  在分类过往看到的云的过程中（Reference：云彩收集者手册，国际云图集），我也发现还有很多云不起眼但也值得收集，
+  在分类过往看到的云的过程中（Reference：<a href="https://www.amazon.com/Cloud-Collectors-Handbook-Gavin-Pretor-Pinney/dp/0340919434" target="_blank" rel="noopener">云彩收集者手册</a>，<a href="https://cloudatlas.wmo.int/en/home.html" target="_blank" rel="noopener">国际云图集</a>），我也发现还有很多云不起眼但也值得收集，
   有很多云奇妙却转瞬即逝，还有些云只在特定的经纬度和极端的天气条件下才会出现，需要一辈子的时间才能幸运地碰上那么一两次。
   我会继续仰望天空，继续记录和收集看到的各式各样的云彩的。
   同时因为我不是专业气象学家，辨别云朵类型依靠的只有图鉴和 Claude，
@@ -28,8 +28,7 @@ preface_zh: >-
 preface_en: >-
   Below are the endlessly varied clouds I've looked up at through all four seasons —
   I'm grateful they exist, for they remind me how vast and wonderful this world is.
-  While sorting through the clouds I've seen (Reference: The Cloud Collector's Handbook,
-  the International Cloud Atlas), I found that many are unremarkable yet still worth
+  While sorting through the clouds I've seen (Reference: <a href="https://www.amazon.com/Cloud-Collectors-Handbook-Gavin-Pretor-Pinney/dp/0340919434" target="_blank" rel="noopener">The Cloud Collector's Handbook</a>，<a href="https://cloudatlas.wmo.int/en/home.html" target="_blank" rel="noopener">International Cloud Atlas</a>），I found that many are unremarkable yet still worth
   collecting, that many are wondrous but fleeting, and that some appear only at certain
   latitudes and under extreme weather — so rare you might wait a lifetime to be lucky
   enough to catch one or two. I'll keep looking up, and keep recording and collecting all
