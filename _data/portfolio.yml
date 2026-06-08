@@ -16,9 +16,9 @@
 projects:
   - image: project2.png
     title: Project title
-    meta: Manuscript in preparation · 2026
+    meta: 
     url:
     description: >-
-      A short description of this project goes here — what the problem was,
-      what you built or discovered, and why it matters. Replace this placeholder
-      with your own write-up.
+      Built a genome-wide imaging genetics pipeline integrating 170,566 coding variants, 
+      1,425 MRI phenotypes, and disease GWAS datasets to identify brain-related risk genes 
+      and quantify genetic correlations with neuropsychiatric disorders.  

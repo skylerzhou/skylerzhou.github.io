@@ -27,23 +27,23 @@ _styles: >
     color: var(--global-bg-color);
     border-color: var(--global-theme-color);
   }
-  /* default state: hide English so the no-JS fallback shows Chinese */
-  .lang-en { display: none; }
-  /* in EN mode: hide Chinese, show English with explicit display per element type */
-  body.lang-en .lang-zh { display: none; }
-  body.lang-en span.lang-en,
-  body.lang-en a.lang-en { display: inline; }
-  body.lang-en p.lang-en,
-  body.lang-en div.lang-en,
-  body.lang-en h1.lang-en,
-  body.lang-en h2.lang-en,
-  body.lang-en h3.lang-en,
-  body.lang-en h4.lang-en,
-  body.lang-en h5.lang-en,
-  body.lang-en h6.lang-en,
-  body.lang-en section.lang-en,
-  body.lang-en article.lang-en,
-  body.lang-en li.lang-en { display: block; }
+  /* default state: hide Chinese so the no-JS fallback shows English */
+  .lang-zh { display: none; }
+  /* in ZH mode: hide English, show Chinese with explicit display per element type */
+  body.lang-zh .lang-en { display: none; }
+  body.lang-zh span.lang-zh,
+  body.lang-zh a.lang-zh { display: inline; }
+  body.lang-zh p.lang-zh,
+  body.lang-zh div.lang-zh,
+  body.lang-zh h1.lang-zh,
+  body.lang-zh h2.lang-zh,
+  body.lang-zh h3.lang-zh,
+  body.lang-zh h4.lang-zh,
+  body.lang-zh h5.lang-zh,
+  body.lang-zh h6.lang-zh,
+  body.lang-zh section.lang-zh,
+  body.lang-zh article.lang-zh,
+  body.lang-zh li.lang-zh { display: block; }
 
   /* ---------- preface ---------- */
   .cloud-preface {
@@ -231,8 +231,8 @@ _styles: >
 <!-- prettier-ignore-start -->
 
 <div class="cloud-lang-toggle" role="group" aria-label="language toggle">
-  <button type="button" id="cloud-lang-en" onclick="setCloudLang('en')">EN</button>
-  <button type="button" id="cloud-lang-zh" class="active" onclick="setCloudLang('zh')">中</button>
+  <button type="button" id="cloud-lang-en" class="active" onclick="setCloudLang('en')">EN</button>
+  <button type="button" id="cloud-lang-zh" onclick="setCloudLang('zh')">中</button>
 </div>
 
 <!-- ============== PREFACE ============== -->
@@ -385,8 +385,8 @@ _styles: >
       if (zhBtn) zhBtn.classList.toggle('active', lang === 'zh');
       try { localStorage.setItem('cloudLang', lang); } catch (e) {}
     };
-    // Default to Chinese; honor the user's last explicit choice if they've toggled.
-    var initial = 'zh';
+    // Default to English; honor the user's last explicit choice if they've toggled.
+    var initial = 'en';
     try {
       var saved = localStorage.getItem('cloudLang');
       if (saved === 'zh' || saved === 'en') initial = saved;

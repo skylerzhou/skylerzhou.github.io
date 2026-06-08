@@ -14,5 +14,5 @@ _styles: >
 ---
 
 <div class="stargazing-note">
-  <p>I'm going for the Perseids Meteor Shower in August, fully pumped up now and will have pictures then!</p>
+  <p>I'm going for the Perseids Meteor Shower in August,pictures soon!</p>
 </div>
