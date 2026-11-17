@@ -1,0 +1,109 @@
+# Stargazing data
+# ----------------
+# The page renders the sections below in order (grouped by type of shot).
+# Each section holds a list of `items`.
+#
+# An item can include:
+#   image            – photo filename inside assets/img/stargazing/ (use ASCII names)
+#   video + poster   – for a clip instead of a photo: the .mp4 filename and the
+#                      still image shown before it plays (both in assets/img/stargazing/)
+#   title_zh / title_en
+#   location_zh / location_en
+#   time_zh / time_en
+#   gear_zh / gear_en           (器材和拍摄参数; the line is left out if both are missing)
+#   description_zh / description_en
+#
+# A section with an empty `items: []` list renders a "to be photographed" note.
+#
+# To add a new item:
+#   1. Drop the file in assets/img/stargazing/ (ASCII filename like "meteor-02.jpg").
+#      Browsers can show .jpg / .png / .webp photos and H.264 .mp4 videos.
+#      Camera RAW files (.NEF etc.) must be exported to .jpg first.
+#   2. Append a new item under the appropriate section's `items:` list.
+
+# Preface text shown above the table of contents.
+preface_zh: >-
+  前言待填。
+preface_en: >-
+  Preface TBD.
+
+sections:
+  - id: milky-way
+    title_zh: 银河
+    title_en: Milky Way
+    items:
+      # source: data/stars/8326.JPG (no capture date in the file; month assumed
+      # from the other three shots — change it if this one is from another trip)
+      - image: milky-way-01.jpg
+        title_zh: 标题待填
+        title_en: Title TBD
+        location_zh: 地点待填
+        location_en: Location TBD
+        time_zh: 2026年八月
+        time_en: August 2026
+        gear_zh: iPhone · 24mm（等效）· f/1.78 · 10s · ISO 10000
+        gear_en: iPhone · 24mm (equiv.) · f/1.78 · 10s · ISO 10000
+        description_zh: >-
+          描述待填。
+        description_en: >-
+          Description TBD.
+
+  - id: star-trails
+    title_zh: 星轨
+    title_en: Star trails
+    items:
+      # source: data/stars/R0010889.JPG (taken 2026-08-15 04:05)
+      - image: star-trails-01.jpg
+        title_zh: 标题待填
+        title_en: Title TBD
+        location_zh: 地点待填
+        location_en: Location TBD
+        time_zh: 2026年八月
+        time_en: August 2026
+        gear_zh: Ricoh GR II · 18.3mm · f/2.8 · 单张 20s · ISO 800
+        gear_en: Ricoh GR II · 18.3mm · f/2.8 · 20s per frame · ISO 800
+        description_zh: >-
+          描述待填。
+        description_en: >-
+          Description TBD.
+
+  - id: meteors
+    title_zh: 流星
+    title_en: Meteors
+    items:
+      # source: data/stars/DSC_1410.NEF (taken 2026-08-15 22:03); the .jpg is the
+      # camera's own full-size rendering stored inside the RAW file, unedited
+      - image: meteor-01.jpg
+        title_zh: 标题待填
+        title_en: Title TBD
+        location_zh: 地点待填
+        location_en: Location TBD
+        time_zh: 2026年八月
+        time_en: August 2026
+        gear_zh: Nikon D7500 · 24mm · f/2.8 · 10s · ISO 3200
+        gear_en: Nikon D7500 · 24mm · f/2.8 · 10s · ISO 3200
+        description_zh: >-
+          描述待填。
+        description_en: >-
+          Description TBD.
+
+  - id: time-lapse
+    title_zh: 延时摄影
+    title_en: Time-lapse
+    items:
+      # source: data/stars/457_raw.MP4 (created 2026-08-15 01:22), re-encoded to a
+      # web-friendly 1600px H.264 .mp4; the file carries no camera information
+      - video: timelapse-01.mp4
+        poster: timelapse-01-poster.jpg
+        title_zh: 标题待填
+        title_en: Title TBD
+        location_zh: 地点待填
+        location_en: Location TBD
+        time_zh: 2026年八月
+        time_en: August 2026
+        gear_zh: 器材待填
+        gear_en: Gear TBD
+        description_zh: >-
+          描述待填。
+        description_en: >-
+          Description TBD.

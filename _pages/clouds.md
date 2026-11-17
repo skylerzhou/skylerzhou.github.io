@@ -367,8 +367,12 @@ _styles: >
     function naturalDisplay(el) {
       return BLOCK_TAGS[el.tagName] ? 'block' : 'inline';
     }
-    window.setCloudLang = function (lang) {
-      // Toggle body class to match the active language (default = Chinese).
+    // The choice is stored under this key and shared with the stargazing page.
+    // (The earlier key, 'cloudLang', was also written on every page load, so it
+    // kept the old Chinese default for returning visitors; it is no longer read.)
+    var LANG_KEY = 'siteLang';
+    function applyLang(lang) {
+      // Toggle body class to match the active language (default = English).
       document.body.classList.toggle('lang-en', lang === 'en');
       document.body.classList.toggle('lang-zh', lang === 'zh');
       // JS safety net: explicitly set inline display on every i18n element
@@ -383,15 +387,19 @@ _styles: >
       var zhBtn = document.getElementById('cloud-lang-zh');
       if (enBtn) enBtn.classList.toggle('active', lang === 'en');
       if (zhBtn) zhBtn.classList.toggle('active', lang === 'zh');
-      try { localStorage.setItem('cloudLang', lang); } catch (e) {}
+    }
+    // The EN / 中 buttons call this: switch, and remember the choice.
+    window.setCloudLang = function (lang) {
+      applyLang(lang);
+      try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
     };
-    // Default to English; honor the user's last explicit choice if they've toggled.
+    // Default to English; honor the visitor's last click on the toggle.
     var initial = 'en';
     try {
-      var saved = localStorage.getItem('cloudLang');
+      var saved = localStorage.getItem(LANG_KEY);
       if (saved === 'zh' || saved === 'en') initial = saved;
     } catch (e) {}
-    window.setCloudLang(initial);
+    applyLang(initial);
   })();
 </script>
 
