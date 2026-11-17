@@ -37,24 +37,24 @@ sections:
       - image: milky-way-01.jpg
         title_zh: 夏季银河：大三角
         title_en: "Summer Milky Way: the Summer Triangle"
-        location_zh: 美国宾夕法尼亚州 Cherry Springs 州立公园
+        location_zh: 美国宾夕法尼亚州樱桃泉州立公园
         location_en: Cherry Springs State Park, PA, USA
         time_zh: 2026年八月
         time_en: August 2026
         gear_zh: iPhone · 24mm（等效）· f/1.78 · 10s · ISO 10000
         gear_en: iPhone · 24mm (equiv.) · f/1.78 · 10s · ISO 10000
         description_zh: >-
-          在Cherry Springs 州立公园和朋友们躺在地上，一边问ChatGPT一边找到了在大裂缝中的织女星，牛郎星，天津四构成的醒目的夏季银河大三角，以及其他各种各样的星座。第一次观察到了模模糊糊的，不仔细看会以为是云雾的英仙座，看到了银河像一道蒸汽一样从茶壶一样的人马座蒸腾起来。可惜照片里面噪点太多了，很难看清楚银河的细节。希望下次能拍到更像肉眼能观察到的银河照片。
+          在樱桃泉州立公园和朋友们躺在地上，一边问ChatGPT一边找到了在大裂缝中的织女星，牛郎星，天津四构成的醒目的夏季银河大三角，以及其他各种各样的星座。第一次观察到了模模糊糊的，不仔细看会以为是云雾的仙女座星系，看到了银河像一道蒸汽一样从茶壶一样的人马座蒸腾起来。可惜照片里面噪点太多了，很难看清楚银河的细节。希望下次能拍到更像肉眼能观察到的银河照片。
         description_en: >-
           Lying on the ground with friends at Cherry Springs State Park, asking
           ChatGPT as we went, we found the striking Summer Triangle of the summer
           Milky Way, formed by Vega, Altair and Deneb in the Great Rift, along with
-          all sorts of other constellations. For the first time I made out Perseus,
-          so faint and hazy that you could take it for cloud or mist if you didn't
-          look closely, and watched the Milky Way rise like a wisp of steam from
-          the teapot of Sagittarius. Sadly the photo is too noisy to show much of
-          the Milky Way's detail. Next time I hope to take a Milky Way photo that
-          is closer to what the naked eye can see.
+          all sorts of other constellations. For the first time I made out the
+          Andromeda Galaxy, so faint and hazy that you could take it for cloud or
+          mist if you didn't look closely, and watched the Milky Way rise like a
+          wisp of steam from the teapot of Sagittarius. Sadly the photo is too noisy
+          to show much of the Milky Way's detail. Next time I hope to take a Milky
+          Way photo that is closer to what the naked eye can see.
 
       # source: data/stars/457_raw.MP4 (created 2026-08-15 01:22), re-encoded to a
       # web-friendly 1600px H.264 .mp4; the file carries no camera information
@@ -62,7 +62,7 @@ sections:
         poster: timelapse-01-poster.jpg
         title_zh: 银河延时
         title_en: Milky Way time-lapse
-        location_zh: 美国宾夕法尼亚州 Cherry Springs 州立公园
+        location_zh: 美国宾夕法尼亚州樱桃泉州立公园
         location_en: Cherry Springs State Park, PA, USA
         time_zh: 2026年八月
         time_en: August 2026
@@ -85,7 +85,7 @@ sections:
       - image: star-trails-01.jpg
         title_zh: 沾满露水的草地上拍到的星轨
         title_en: Star trails from dew-soaked grass
-        location_zh: 美国宾夕法尼亚州 Cherry Springs 州立公园
+        location_zh: 美国宾夕法尼亚州樱桃泉州立公园
         location_en: Cherry Springs State Park, PA, USA
         time_zh: 2026年八月
         time_en: August 2026
@@ -108,17 +108,17 @@ sections:
       - image: meteor-01.jpg
         title_zh: 英仙座流星（疑似）
         title_en: Perseid meteor (probably)
-        location_zh: 美国宾夕法尼亚州 Cherry Springs 州立公园
+        location_zh: 美国宾夕法尼亚州樱桃泉州立公园
         location_en: Cherry Springs State Park, PA, USA
         time_zh: 2026年八月
         time_en: August 2026
         gear_zh: Nikon D7500 · 24mm · f/2.8 · 10s · ISO 3200
         gear_en: Nikon D7500 · 24mm · f/2.8 · 10s · ISO 3200
         description_zh: >-
-          不是一颗卫星因为它不是一条笔直的线；应该是一颗流星因为线条头细尾粗，同时尾巴上的光点很大很闪。当天还看到了火流星，如果能拍到的话会是一个有颜色的光电弧。
+          不是一颗卫星因为它不是一条笔直的线；应该是一颗流星因为线条头细尾粗，同时尾巴上的光点很大很闪。当天还看到了火流星，如果能拍到的话会是一道有颜色的光线。
         description_en: >-
           It isn't a satellite, because the streak isn't a straight line; it should
           be a meteor, because the streak is thin at the head and thick at the
           tail, and the point of light at the tail is big and bright. We also saw
           a fireball that night — had I caught it on camera, it would have been a
-          colored arc of light.
+          colored streak of light.
